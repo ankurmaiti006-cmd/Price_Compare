@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* 🌈 Animated Background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+  background-size: 600% 600%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌌 Outer Glass Container */
+.outer-container {
+  width: 95%;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(0,255,255,0.15), rgba(255,255,255,0.05));
+  backdrop-filter: blur(16px);
+  box-shadow: 
+    0 0 40px rgba(0, 255, 255, 0.25),
+    inset 0 0 30px rgba(255, 255, 255, 0.05);
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🧊 Inner Main Panel */
+.inner-container {
+  width: 100%;
+  padding: 40px;
+  border-radius: 22px;
+  background: rgba(20, 30, 40, 0.85);
+  box-shadow: 
+    0 20px 50px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(0, 255, 255, 0.08);
+  text-align: center;
+}
+
+/* ✨ Title */
+h1 {
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+p {
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* 🔍 Search Box Container */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* 📝 Input */
+input {
+  padding: 14px 18px;
+  width: 60%;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: rgba(255,255,255,0.95);
+}
+
+/* 🚀 Button */
+button {
+  padding: 14px 24px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  color: #111;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 1);
+}
+
+/* ⏳ Loading */
+#loading {
+  margin: 20px;
+  font-size: 18px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🃏 Cards Grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* 🧱 Card */
+.card {
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+  color: #111;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 
+    0 15px 35px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(255,255,255,0.6);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* 🏆 Cheapest Highlight */
+.card.cheapest {
+  border: 3px solid #2ecc71;
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.9);
+}
+
+/* 🏷️ Store Name */
+.store {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 💰 Price */
+.price {
+  font-size: 28px;
+  color: #27ae60;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* 🏅 Best Deal Tag */
+.best {
+  color: #27ae60;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 🛒 Buy Button */
+.buy-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.8);
+}
+
+
+
+
+/* 🟦 Rectangular Border Scanner Animation */
+.outer-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Common scan line style */
+.scan {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #00f2fe, transparent);
+  box-shadow: 0 0 15px #00f2fe;
+}
+
+/* Top line */
+.scan.top {
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 4px;
+  animation: scanTop 4s linear infinite;
+}
+
+/* Right line */
+.scan.right {
+  top: -30%;
+  right: 0;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(180deg, transparent, #00f2fe, transparent);
+  animation: scanRight 4s linear infinite;
+  animation-delay: 1s;
+}
+
+/* Bottom line */
+.scan.bottom {
+  bottom: 0;
+  right: -30%;
+  width: 30%;
+  height: 4px;
+  animation: scanBottom 4s linear infinite;
+  animation-delay: 2s;
+}
+
+/* Left line */
+.scan.left {
+  bottom: -30%;
+  left: 0;
+  width: 4px;
+  height: 30%;
+  background: linear-gradient(180deg, transparent, #00f2fe, transparent);
+  animation: scanLeft 4s linear infinite;
+  animation-delay: 3s;
+}
+
+/* Animations */
+@keyframes scanTop {
+  0% { left: -30%; }
+  100% { left: 100%; }
+}
+
+@keyframes scanRight {
+  0% { top: -30%; }
+  100% { top: 100%; }
+}
+
+@keyframes scanBottom {
+  0% { right: -30%; }
+  100% { right: 100%; }
+}
+
+@keyframes scanLeft {
+  0% { bottom: -30%; }
+  100% { bottom: 100%; }
+}

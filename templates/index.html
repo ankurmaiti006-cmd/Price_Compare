@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PricePilot - Smart Price Compare</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+  <div class="outer-container">
+  <span class="scan top"></span>
+  <span class="scan right"></span>
+  <span class="scan bottom"></span>
+  <span class="scan left"></span>
+  <div class="inner-container">
+    <h1>🛒 PricePilot</h1>
+    <p>Compare prices across stores and get the best deal instantly.</p>
+
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Enter product name (e.g. iPhone 13)">
+      <button onclick="comparePrice()">Compare</button>
+    </div>
+
+    <div id="loading" class="hidden">🔄 Searching best deals...</div>
+    <div id="results" class="cards"></div>
+  </div>
+</div>
+
+
+
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
